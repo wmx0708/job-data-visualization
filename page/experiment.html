@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>学历要求</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts-gl.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/themes/macarons.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/jquery.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/ResizeSensor.js"></script>
+
+            <link rel="stylesheet"  href="https://assets.pyecharts.org/assets/jquery-ui.css">
+
+</head>
+<body>
+    <style>.box {  }; </style>
+        
+    <div class="box">
+                <div id="pie_exp" class="chart-container" style="position: absolute; width: 508.666666px; height: 254.666666px; top: 80.33332824707031px; left: 44px;"></div>
+    <script>
+        var chart_pie_exp = echarts.init(
+            document.getElementById('pie_exp'), 'macarons', {renderer: 'canvas'});
+        var option_pie_exp = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "series": [
+        {
+            "type": "pie",
+            "clockwise": true,
+            "data": [
+                {
+                    "name": "3-5\u5e74",
+                    "value": 1507
+                },
+                {
+                    "name": "1-3\u5e74",
+                    "value": 849
+                },
+                {
+                    "name": "5-10\u5e74",
+                    "value": 767
+                },
+                {
+                    "name": "\u7ecf\u9a8c\u4e0d\u9650",
+                    "value": 595
+                },
+                {
+                    "name": "10\u5e74\u4ee5\u4e0a",
+                    "value": 93
+                },
+                {
+                    "name": "\u4e00\u5e74\u4ee5\u4e0b",
+                    "value": 29
+                }
+            ],
+            "radius": [
+                "0%",
+                "75%"
+            ],
+            "center": [
+                "60%",
+                "60%"
+            ],
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "formatter": "{b}: {c}"
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "3-5\u5e74",
+                "1-3\u5e74",
+                "5-10\u5e74",
+                "\u7ecf\u9a8c\u4e0d\u9650",
+                "10\u5e74\u4ee5\u4e0a",
+                "\u4e00\u5e74\u4ee5\u4e0b"
+            ],
+            "selected": {},
+            "show": true,
+            "left": 0,
+            "top": "20%",
+            "orient": "vertical",
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_pie_exp.setOption(option_pie_exp);
+    </script>
+<br/>                <div id="bar_exp" class="chart-container" style="position: absolute; width: 650.666666px; height: 254.666666px; top: 79px; left: 574px;"></div>
+    <script>
+        var chart_bar_exp = echarts.init(
+            document.getElementById('bar_exp'), 'macarons', {renderer: 'canvas'});
+        var option_bar_exp = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "series": [
+        {
+            "type": "bar",
+            "name": "\u7ecf\u9a8c\u4e0d\u9650",
+            "legendHoverLink": true,
+            "data": [
+                1,
+                18,
+                19,
+                5,
+                35,
+                2,
+                34,
+                7,
+                7
+            ],
+            "showBackground": false,
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        },
+        {
+            "type": "bar",
+            "name": "\u4e00\u5e74\u4ee5\u4e0b",
+            "legendHoverLink": true,
+            "data": [
+                0,
+                0,
+                2,
+                0,
+                0,
+                0,
+                5,
+                0,
+                0
+            ],
+            "showBackground": false,
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        },
+        {
+            "type": "bar",
+            "name": "1-3\u5e74",
+            "legendHoverLink": true,
+            "data": [
+                7,
+                28,
+                21,
+                6,
+                1,
+                2,
+                16,
+                6,
+                5
+            ],
+            "showBackground": false,
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        },
+        {
+            "type": "bar",
+            "name": "3-5\u5e74",
+            "legendHoverLink": true,
+            "data": [
+                60,
+                50,
+                42,
+                38,
+                24,
+                31,
+                29,
+                32,
+                54
+            ],
+            "showBackground": false,
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        },
+        {
+            "type": "bar",
+            "name": "5-10\u5e74",
+            "legendHoverLink": true,
+            "data": [
+                50,
+                7,
+                20,
+                42,
+                56,
+                6,
+                2,
+                3,
+                51
+            ],
+            "showBackground": false,
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        },
+        {
+            "type": "bar",
+            "name": "10\u5e74\u4ee5\u4e0a",
+            "legendHoverLink": true,
+            "data": [
+                1,
+                0,
+                7,
+                8,
+                2,
+                0,
+                1,
+                0,
+                3
+            ],
+            "showBackground": false,
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "\u7ecf\u9a8c\u4e0d\u9650",
+                "\u4e00\u5e74\u4ee5\u4e0b",
+                "1-3\u5e74",
+                "3-5\u5e74",
+                "5-10\u5e74",
+                "10\u5e74\u4ee5\u4e0a"
+            ],
+            "selected": {
+                "\u7ecf\u9a8c\u4e0d\u9650": true,
+                "\u4e00\u5e74\u4ee5\u4e0b": true,
+                "1-3\u5e74": true,
+                "3-5\u5e74": true,
+                "5-10\u5e74": true,
+                "10\u5e74\u4ee5\u4e0a": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "xAxis": [
+        {
+            "name": "\u516c\u53f8",
+            "show": true,
+            "scale": false,
+            "nameLocation": "middle",
+            "nameGap": 35,
+            "nameTextStyle": {
+                "color": "black",
+                "fontFamily": "Times New Roman",
+                "fontSize": 18
+            },
+            "gridIndex": 0,
+            "axisLabel": {
+                "show": true,
+                "position": "top",
+                "margin": 8,
+                "interval": 0
+            },
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "\u7f8e\u56e2",
+                "\u5bfb\u68a6",
+                "\u767e\u5ea6",
+                "\u4eac\u4e1c",
+                "\u5b57\u8282\u8df3\u52a8",
+                "\u817e\u8baf",
+                "\u534e\u4e3a",
+                "\u963f\u91cc\u5df4\u5df4",
+                "\u5c0f\u7c73"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "name": "\u5c97\u4f4d\u6570",
+            "show": true,
+            "scale": false,
+            "nameLocation": "middle",
+            "nameGap": 35,
+            "nameTextStyle": {
+                "color": "black",
+                "fontFamily": "Times New Roman",
+                "fontSize": 18
+            },
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_bar_exp.setOption(option_bar_exp);
+    </script>
+<br/>                <div id="line_exp" class="chart-container" style="position: absolute; width: 508.666666px; height: 264.666666px; top: 354.66668701171875px; left: 42px;"></div>
+    <script>
+        var chart_line_exp = echarts.init(
+            document.getElementById('line_exp'), 'macarons', {renderer: 'canvas'});
+        var option_line_exp = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "series": [
+        {
+            "type": "line",
+            "connectNulls": false,
+            "symbolSize": 4,
+            "showSymbol": true,
+            "smooth": false,
+            "clip": true,
+            "step": false,
+            "data": [
+                [
+                    "10\u5e74\u4ee5\u4e0a",
+                    49.73
+                ],
+                [
+                    "5-10\u5e74",
+                    26.34
+                ],
+                [
+                    "3-5\u5e74",
+                    18.93
+                ],
+                [
+                    "\u7ecf\u9a8c\u4e0d\u9650",
+                    18.17
+                ],
+                [
+                    "1-3\u5e74",
+                    13.24
+                ],
+                [
+                    "\u4e00\u5e74\u4ee5\u4e0b",
+                    9.46
+                ]
+            ],
+            "hoverAnimation": true,
+            "label": {
+                "show": true,
+                "position": "top",
+                "margin": 8
+            },
+            "lineStyle": {
+                "show": true,
+                "width": 1,
+                "opacity": 1,
+                "curveness": 0,
+                "type": "solid"
+            },
+            "areaStyle": {
+                "opacity": 0
+            },
+            "zlevel": 0,
+            "z": 0
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                ""
+            ],
+            "selected": {
+                "": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "xAxis": [
+        {
+            "name": "\u5de5\u4f5c\u7ecf\u9a8c",
+            "show": true,
+            "scale": false,
+            "nameLocation": "middle",
+            "nameGap": 35,
+            "nameTextStyle": {
+                "color": "black",
+                "fontFamily": "Times New Roman",
+                "fontSize": 18
+            },
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "10\u5e74\u4ee5\u4e0a",
+                "5-10\u5e74",
+                "3-5\u5e74",
+                "\u7ecf\u9a8c\u4e0d\u9650",
+                "1-3\u5e74",
+                "\u4e00\u5e74\u4ee5\u4e0b"
+            ]
+        }
+    ],
+    "yAxis": [
+        {
+            "name": "\u85aa\u8d44\uff08k\uff09",
+            "show": true,
+            "scale": false,
+            "nameLocation": "middle",
+            "nameGap": 35,
+            "nameTextStyle": {
+                "color": "black",
+                "fontFamily": "Times New Roman",
+                "fontSize": 18
+            },
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "title": [
+        {
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_line_exp.setOption(option_line_exp);
+    </script>
+<br/>                <div id="Bar3D_exp_sal" class="chart-container" style="position: absolute; width: 648.666666px; height: 261.666666px; top: 356.33331298828125px; left: 574px;"></div>
+    <script>
+        var chart_Bar3D_exp_sal = echarts.init(
+            document.getElementById('Bar3D_exp_sal'), 'white', {renderer: 'canvas'});
+        var option_Bar3D_exp_sal = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "bar3D",
+            "data": [
+                [
+                    "3-5\u5e74",
+                    "3k",
+                    0
+                ],
+                [
+                    "3-5\u5e74",
+                    "40k",
+                    2
+                ],
+                [
+                    "3-5\u5e74",
+                    ">40k",
+                    40
+                ],
+                [
+                    "3-5\u5e74",
+                    "15k-20k",
+                    289
+                ],
+                [
+                    "3-5\u5e74",
+                    "10k-15k",
+                    403
+                ],
+                [
+                    "3-5\u5e74",
+                    "<=10k",
+                    320
+                ],
+                [
+                    "3-5\u5e74",
+                    "20k-25k",
+                    110
+                ],
+                [
+                    "3-5\u5e74",
+                    "25k-30k",
+                    182
+                ],
+                [
+                    "3-5\u5e74",
+                    "\u9762\u8bae",
+                    118
+                ],
+                [
+                    "3-5\u5e74",
+                    "30k-40k",
+                    43
+                ],
+                [
+                    "1-3\u5e74",
+                    "3k",
+                    0
+                ],
+                [
+                    "1-3\u5e74",
+                    "40k",
+                    0
+                ],
+                [
+                    "1-3\u5e74",
+                    ">40k",
+                    9
+                ],
+                [
+                    "1-3\u5e74",
+                    "15k-20k",
+                    108
+                ],
+                [
+                    "1-3\u5e74",
+                    "10k-15k",
+                    199
+                ],
+                [
+                    "1-3\u5e74",
+                    "<=10k",
+                    415
+                ],
+                [
+                    "1-3\u5e74",
+                    "20k-25k",
+                    36
+                ],
+                [
+                    "1-3\u5e74",
+                    "25k-30k",
+                    15
+                ],
+                [
+                    "1-3\u5e74",
+                    "\u9762\u8bae",
+                    56
+                ],
+                [
+                    "1-3\u5e74",
+                    "30k-40k",
+                    11
+                ],
+                [
+                    "\u7ecf\u9a8c\u4e0d\u9650",
+                    "3k",
+                    1
+                ],
+                [
+                    "\u7ecf\u9a8c\u4e0d\u9650",
+                    "40k",
+                    0
+                ],
+                [
+                    "\u7ecf\u9a8c\u4e0d\u9650",
+                    ">40k",
+                    23
+                ],
+                [
+                    "\u7ecf\u9a8c\u4e0d\u9650",
+                    "15k-20k",
+                    117
+                ],
+                [
+                    "\u7ecf\u9a8c\u4e0d\u9650",
+                    "10k-15k",
+                    116
+                ],
+                [
+                    "\u7ecf\u9a8c\u4e0d\u9650",
+                    "<=10k",
+                    185
+                ],
+                [
+                    "\u7ecf\u9a8c\u4e0d\u9650",
+                    "20k-25k",
+                    51
+                ],
+                [
+                    "\u7ecf\u9a8c\u4e0d\u9650",
+                    "25k-30k",
+                    47
+                ],
+                [
+                    "\u7ecf\u9a8c\u4e0d\u9650",
+                    "\u9762\u8bae",
+                    29
+                ],
+                [
+                    "\u7ecf\u9a8c\u4e0d\u9650",
+                    "30k-40k",
+                    26
+                ],
+                [
+                    "10\u5e74\u4ee5\u4e0a",
+                    "3k",
+                    0
+                ],
+                [
+                    "10\u5e74\u4ee5\u4e0a",
+                    "40k",
+                    0
+                ],
+                [
+                    "10\u5e74\u4ee5\u4e0a",
+                    ">40k",
+                    42
+                ],
+                [
+                    "10\u5e74\u4ee5\u4e0a",
+                    "15k-20k",
+                    10
+                ],
+                [
+                    "10\u5e74\u4ee5\u4e0a",
+                    "10k-15k",
+                    6
+                ],
+                [
+                    "10\u5e74\u4ee5\u4e0a",
+                    "<=10k",
+                    0
+                ],
+                [
+                    "10\u5e74\u4ee5\u4e0a",
+                    "20k-25k",
+                    5
+                ],
+                [
+                    "10\u5e74\u4ee5\u4e0a",
+                    "25k-30k",
+                    13
+                ],
+                [
+                    "10\u5e74\u4ee5\u4e0a",
+                    "\u9762\u8bae",
+                    3
+                ],
+                [
+                    "10\u5e74\u4ee5\u4e0a",
+                    "30k-40k",
+                    14
+                ],
+                [
+                    "\u4e00\u5e74\u4ee5\u4e0b",
+                    "3k",
+                    0
+                ],
+                [
+                    "\u4e00\u5e74\u4ee5\u4e0b",
+                    "40k",
+                    0
+                ],
+                [
+                    "\u4e00\u5e74\u4ee5\u4e0b",
+                    ">40k",
+                    0
+                ],
+                [
+                    "\u4e00\u5e74\u4ee5\u4e0b",
+                    "15k-20k",
+                    0
+                ],
+                [
+                    "\u4e00\u5e74\u4ee5\u4e0b",
+                    "10k-15k",
+                    8
+                ],
+                [
+                    "\u4e00\u5e74\u4ee5\u4e0b",
+                    "<=10k",
+                    19
+                ],
+                [
+                    "\u4e00\u5e74\u4ee5\u4e0b",
+                    "20k-25k",
+                    0
+                ],
+                [
+                    "\u4e00\u5e74\u4ee5\u4e0b",
+                    "25k-30k",
+                    0
+                ],
+                [
+                    "\u4e00\u5e74\u4ee5\u4e0b",
+                    "\u9762\u8bae",
+                    1
+                ],
+                [
+                    "\u4e00\u5e74\u4ee5\u4e0b",
+                    "30k-40k",
+                    1
+                ],
+                [
+                    "5-10\u5e74",
+                    "3k",
+                    0
+                ],
+                [
+                    "5-10\u5e74",
+                    "40k",
+                    0
+                ],
+                [
+                    "5-10\u5e74",
+                    ">40k",
+                    69
+                ],
+                [
+                    "5-10\u5e74",
+                    "15k-20k",
+                    179
+                ],
+                [
+                    "5-10\u5e74",
+                    "10k-15k",
+                    132
+                ],
+                [
+                    "5-10\u5e74",
+                    "<=10k",
+                    32
+                ],
+                [
+                    "5-10\u5e74",
+                    "20k-25k",
+                    80
+                ],
+                [
+                    "5-10\u5e74",
+                    "25k-30k",
+                    152
+                ],
+                [
+                    "5-10\u5e74",
+                    "\u9762\u8bae",
+                    66
+                ],
+                [
+                    "5-10\u5e74",
+                    "30k-40k",
+                    57
+                ]
+            ],
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                ""
+            ],
+            "selected": {},
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "visualMap": {
+        "show": false,
+        "type": "continuous",
+        "min": 0,
+        "max": 500,
+        "inRange": {
+            "color": [
+                "#50a3ba",
+                "#eac763",
+                "#d94e5d"
+            ]
+        },
+        "calculable": true,
+        "inverse": false,
+        "splitNumber": 5,
+        "orient": "vertical",
+        "showLabel": true,
+        "itemWidth": 20,
+        "itemHeight": 140,
+        "borderWidth": 0
+    },
+    "xAxis3D": {
+        "data": null,
+        "nameGap": 20,
+        "type": "category",
+        "axisLabel": {
+            "margin": 8
+        }
+    },
+    "yAxis3D": {
+        "data": null,
+        "nameGap": 20,
+        "type": "category",
+        "axisLabel": {
+            "margin": 8
+        }
+    },
+    "zAxis3D": {
+        "nameGap": 20,
+        "type": "value",
+        "axisLabel": {
+            "margin": 8
+        }
+    },
+    "grid3D": {
+        "boxWidth": 200,
+        "boxHeight": 100,
+        "boxDepth": 80,
+        "viewControl": {
+            "autoRotate": false,
+            "autoRotateSpeed": 10,
+            "rotateSensitivity": 1
+        }
+    },
+    "title": [
+        {
+            "text": "\u5de5\u4f5c\u7ecf\u9a8c\u85aa\u916c\u804c\u4f4d\u6570\u91cf\u7edf\u8ba1",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ]
+};
+        chart_Bar3D_exp_sal.setOption(option_Bar3D_exp_sal);
+    </script>
+<br/>    </div>
+    <script>
+            $('#pie_exp').css('border-style', 'dashed').css('border-width', '0px');$("#pie_exp>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#pie_exp'), function() { chart_pie_exp.resize()});
+            $('#bar_exp').css('border-style', 'dashed').css('border-width', '0px');$("#bar_exp>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#bar_exp'), function() { chart_bar_exp.resize()});
+            $('#line_exp').css('border-style', 'dashed').css('border-width', '0px');$("#line_exp>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#line_exp'), function() { chart_line_exp.resize()});
+            $('#Bar3D_exp_sal').css('border-style', 'dashed').css('border-width', '0px');$("#Bar3D_exp_sal>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#Bar3D_exp_sal'), function() { chart_Bar3D_exp_sal.resize()});
+            var charts_id = ['pie_exp','bar_exp','line_exp','Bar3D_exp_sal'];
+function downloadCfg () {
+    const fileName = 'chart_config.json'
+    let downLink = document.createElement('a')
+    downLink.download = fileName
+
+    let result = []
+    for(let i=0; i<charts_id.length; i++) {
+        chart = $('#'+charts_id[i])
+        result.push({
+            cid: charts_id[i],
+            width: chart.css("width"),
+            height: chart.css("height"),
+            top: chart.offset().top + "px",
+            left: chart.offset().left + "px"
+        })
+    }
+
+    let blob = new Blob([JSON.stringify(result)])
+    downLink.href = URL.createObjectURL(blob)
+    document.body.appendChild(downLink)
+    downLink.click()
+    document.body.removeChild(downLink)
+}
+    </script>
+</body>
+</html>

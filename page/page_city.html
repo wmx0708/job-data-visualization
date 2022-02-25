@@ -1,0 +1,1879 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>城市分布</title>
+            <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/echarts-wordcloud.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/maps/china.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/jquery.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="https://assets.pyecharts.org/assets/ResizeSensor.js"></script>
+
+            <link rel="stylesheet"  href="https://assets.pyecharts.org/assets/jquery-ui.css">
+
+</head>
+<body>
+    <style>.box {  }; </style>
+        <button onclick="downloadCfg()">Save Config</button>
+    <div class="box">
+                <div id="bar_city" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_bar_city = echarts.init(
+            document.getElementById('bar_city'), 'white', {renderer: 'canvas'});
+        var option_bar_city = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "bar",
+            "legendHoverLink": true,
+            "data": [
+                95,
+                118,
+                125,
+                141,
+                141,
+                195,
+                246,
+                495,
+                649,
+                993
+            ],
+            "showBackground": false,
+            "barMinHeight": 0,
+            "barCategoryGap": "20%",
+            "barGap": "30%",
+            "large": false,
+            "largeThreshold": 400,
+            "seriesLayoutBy": "column",
+            "datasetIndex": 0,
+            "clip": true,
+            "zlevel": 0,
+            "z": 2,
+            "label": {
+                "show": true,
+                "position": "right",
+                "margin": 8
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                ""
+            ],
+            "selected": {
+                "": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "xAxis": [
+        {
+            "name": "\u5c97\u4f4d\u6570",
+            "show": true,
+            "scale": false,
+            "nameLocation": "middle",
+            "nameGap": 35,
+            "nameTextStyle": {
+                "color": "black",
+                "fontFamily": "Times New Roman",
+                "fontSize": 14
+            },
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            }
+        }
+    ],
+    "yAxis": [
+        {
+            "name": "\u57ce\u5e02",
+            "show": true,
+            "scale": false,
+            "nameLocation": "middle",
+            "nameGap": 50,
+            "nameTextStyle": {
+                "color": "black",
+                "fontFamily": "Times New Roman",
+                "fontSize": 14
+            },
+            "gridIndex": 0,
+            "inverse": false,
+            "offset": 0,
+            "splitNumber": 5,
+            "minInterval": 0,
+            "splitLine": {
+                "show": false,
+                "lineStyle": {
+                    "show": true,
+                    "width": 1,
+                    "opacity": 1,
+                    "curveness": 0,
+                    "type": "solid"
+                }
+            },
+            "data": [
+                "\u897f\u5b89",
+                "\u5357\u4eac",
+                "\u6b66\u6c49",
+                "\u82cf\u5dde",
+                "\u6210\u90fd",
+                "\u676d\u5dde",
+                "\u5e7f\u5dde",
+                "\u6df1\u5733",
+                "\u5317\u4eac",
+                "\u4e0a\u6d77"
+            ]
+        }
+    ],
+    "title": [
+        {
+            "text": "\u62db\u8058\u5c97\u4f4d\u6570\u91cf\u57ce\u5e02\u6392\u540dTOP10",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ],
+    "visualMap": {
+        "show": false,
+        "type": "continuous",
+        "min": 0,
+        "max": 1000,
+        "inRange": {
+            "color": [
+                "#007799",
+                "#007799"
+            ]
+        },
+        "calculable": true,
+        "inverse": false,
+        "splitNumber": 5,
+        "orient": "vertical",
+        "showLabel": true,
+        "itemWidth": 20,
+        "itemHeight": 140,
+        "borderWidth": 0
+    }
+};
+        chart_bar_city.setOption(option_bar_city);
+    </script>
+<br/>                <div id="word_city" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_word_city = echarts.init(
+            document.getElementById('word_city'), 'white', {renderer: 'canvas'});
+        var option_word_city = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "wordCloud",
+            "name": "\u57ce\u5e02\u804c\u4f4d\u6570\u91cf\u8bcd\u4e91\u56fe",
+            "shape": "circle",
+            "rotationRange": [
+                -90,
+                90
+            ],
+            "rotationStep": 45,
+            "girdSize": 20,
+            "sizeRange": [
+                12,
+                60
+            ],
+            "data": [
+                {
+                    "name": "\u4e0a\u6d77",
+                    "value": 993,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(64,153,149)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5317\u4eac",
+                    "value": 649,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(87,55,43)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6df1\u5733",
+                    "value": 495,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(122,85,120)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5e7f\u5dde",
+                    "value": 246,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(73,103,100)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u676d\u5dde",
+                    "value": 195,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(139,100,143)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6210\u90fd",
+                    "value": 141,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(41,134,21)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u82cf\u5dde",
+                    "value": 141,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(110,137,93)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6b66\u6c49",
+                    "value": 125,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(67,21,58)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5357\u4eac",
+                    "value": 118,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(22,126,34)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u897f\u5b89",
+                    "value": 95,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(32,29,61)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u957f\u6c99",
+                    "value": 54,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(37,48,43)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5408\u80a5",
+                    "value": 53,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(160,15,83)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5b81\u6ce2",
+                    "value": 37,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(22,9,116)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u91cd\u5e86",
+                    "value": 34,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(66,117,96)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u65e0\u9521",
+                    "value": 34,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(37,18,108)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u9752\u5c9b",
+                    "value": 34,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(16,75,132)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u53a6\u95e8",
+                    "value": 31,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(98,147,66)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u90d1\u5dde",
+                    "value": 30,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(59,7,97)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5927\u8fde",
+                    "value": 28,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(108,73,148)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5929\u6d25",
+                    "value": 27,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(5,75,3)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u4e1c\u839e",
+                    "value": 25,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(16,48,82)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6c88\u9633",
+                    "value": 22,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(72,149,75)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u4f5b\u5c71",
+                    "value": 22,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(33,59,160)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6d4e\u5357",
+                    "value": 21,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(31,149,116)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u798f\u5dde",
+                    "value": 19,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(23,3,24)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u73e0\u6d77",
+                    "value": 18,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(51,90,138)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u60e0\u5dde",
+                    "value": 12,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(149,145,133)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6606\u660e",
+                    "value": 11,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(72,86,94)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5e38\u5dde",
+                    "value": 8,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(149,151,35)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u957f\u6625",
+                    "value": 8,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(46,114,20)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6cc9\u5dde",
+                    "value": 8,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(90,63,70)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u70df\u53f0",
+                    "value": 7,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(92,107,18)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5357\u660c",
+                    "value": 6,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(41,113,48)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u54c8\u5c14",
+                    "value": 5,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(33,35,6)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6e29\u5dde",
+                    "value": 4,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(1,43,117)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u4fdd\u5b9a",
+                    "value": 4,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(17,123,88)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u77f3\u5bb6",
+                    "value": 4,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(110,137,119)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5609\u5174",
+                    "value": 4,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(57,134,144)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5357\u5b81",
+                    "value": 4,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(5,31,144)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5357\u901a",
+                    "value": 3,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(15,59,147)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6d77\u53e3",
+                    "value": 3,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(115,155,103)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u547c\u548c",
+                    "value": 3,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(119,49,150)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u4e2d\u5c71",
+                    "value": 3,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(152,83,132)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u592a\u539f",
+                    "value": 3,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(24,20,100)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5b81\u5fb7",
+                    "value": 2,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(83,123,122)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u94f6\u5ddd",
+                    "value": 2,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(109,140,96)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5eca\u574a",
+                    "value": 2,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(19,105,24)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5f90\u5dde",
+                    "value": 2,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(74,16,27)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5bbf\u8fc1",
+                    "value": 2,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(71,40,133)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8862\u5dde",
+                    "value": 2,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(138,50,153)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u67f3\u5dde",
+                    "value": 2,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(107,77,70)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u626c\u5dde",
+                    "value": 2,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(118,16,112)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u9547\u6c5f",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(116,11,99)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u9f99\u5ca9",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(39,46,118)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u68a7\u5dde",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(96,55,122)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6d4e\u5b81",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(113,83,64)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u83cf\u6cfd",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(97,149,85)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6dee\u5b89",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(88,142,99)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6dc4\u535a",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(55,109,135)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u4e0a\u9976",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(158,17,57)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u9999\u6e2f",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(41,84,82)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u8861\u6c34",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(157,30,70)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u9ec4\u5c71",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(153,13,67)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5b89\u5e86",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(21,99,32)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5b89\u5fbd",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(60,154,54)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6cb3\u5357",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(74,33,6)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u54b8\u5b81",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(15,62,143)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5927\u5e86",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(145,51,66)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5b9c\u660c",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(71,23,41)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5fb7\u5dde",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(125,126,114)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u829c\u6e56",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(35,50,150)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u65b0\u4e61",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(40,81,118)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5341\u5830",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(158,97,88)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6e56\u5317",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(70,135,61)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6e58\u6f6d",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(15,76,17)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u65e5\u7167",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(120,143,36)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u53f0\u5dde",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(3,160,27)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6f4d\u574a",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(2,43,100)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6cf0\u5dde",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(81,155,28)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u6e56\u5dde",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(63,120,4)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5e73\u9876",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(95,32,103)"
+                        }
+                    }
+                },
+                {
+                    "name": "\u5170\u5dde",
+                    "value": 1,
+                    "textStyle": {
+                        "normal": {
+                            "color": "rgb(103,120,159)"
+                        }
+                    }
+                }
+            ],
+            "drawOutOfBound": false,
+            "textStyle": {
+                "emphasis": {}
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [],
+            "selected": {}
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    }
+};
+        chart_word_city.setOption(option_word_city);
+    </script>
+<br/>                <div id="geo_city" class="chart-container" style="width:900px; height:500px;"></div>
+    <script>
+        var chart_geo_city = echarts.init(
+            document.getElementById('geo_city'), 'white', {renderer: 'canvas'});
+        var option_geo_city = {
+    "animation": true,
+    "animationThreshold": 2000,
+    "animationDuration": 1000,
+    "animationEasing": "cubicOut",
+    "animationDelay": 0,
+    "animationDurationUpdate": 300,
+    "animationEasingUpdate": "cubicOut",
+    "animationDelayUpdate": 0,
+    "color": [
+        "#c23531",
+        "#2f4554",
+        "#61a0a8",
+        "#d48265",
+        "#749f83",
+        "#ca8622",
+        "#bda29a",
+        "#6e7074",
+        "#546570",
+        "#c4ccd3",
+        "#f05b72",
+        "#ef5b9c",
+        "#f47920",
+        "#905a3d",
+        "#fab27b",
+        "#2a5caa",
+        "#444693",
+        "#726930",
+        "#b2d235",
+        "#6d8346",
+        "#ac6767",
+        "#1d953f",
+        "#6950a1",
+        "#918597"
+    ],
+    "series": [
+        {
+            "type": "scatter",
+            "name": "geo",
+            "coordinateSystem": "geo",
+            "symbolSize": 12,
+            "data": [
+                {
+                    "name": "\u4e0a\u6d77",
+                    "value": [
+                        121.473701,
+                        31.230416,
+                        993
+                    ]
+                },
+                {
+                    "name": "\u5317\u4eac",
+                    "value": [
+                        116.407526,
+                        39.90403,
+                        649
+                    ]
+                },
+                {
+                    "name": "\u6df1\u5733",
+                    "value": [
+                        114.07,
+                        22.62,
+                        495
+                    ]
+                },
+                {
+                    "name": "\u5e7f\u5dde",
+                    "value": [
+                        113.23,
+                        23.16,
+                        246
+                    ]
+                },
+                {
+                    "name": "\u676d\u5dde",
+                    "value": [
+                        120.19,
+                        30.26,
+                        195
+                    ]
+                },
+                {
+                    "name": "\u6210\u90fd",
+                    "value": [
+                        104.06,
+                        30.67,
+                        141
+                    ]
+                },
+                {
+                    "name": "\u82cf\u5dde",
+                    "value": [
+                        120.62,
+                        31.32,
+                        141
+                    ]
+                },
+                {
+                    "name": "\u6b66\u6c49",
+                    "value": [
+                        114.31,
+                        30.52,
+                        125
+                    ]
+                },
+                {
+                    "name": "\u5357\u4eac",
+                    "value": [
+                        118.78,
+                        32.04,
+                        118
+                    ]
+                },
+                {
+                    "name": "\u897f\u5b89",
+                    "value": [
+                        108.95,
+                        34.27,
+                        95
+                    ]
+                },
+                {
+                    "name": "\u957f\u6c99",
+                    "value": [
+                        113,
+                        28.21,
+                        54
+                    ]
+                },
+                {
+                    "name": "\u5408\u80a5",
+                    "value": [
+                        117.27,
+                        31.86,
+                        53
+                    ]
+                },
+                {
+                    "name": "\u5b81\u6ce2",
+                    "value": [
+                        121.56,
+                        29.86,
+                        37
+                    ]
+                },
+                {
+                    "name": "\u91cd\u5e86",
+                    "value": [
+                        106.551556,
+                        29.563009,
+                        34
+                    ]
+                },
+                {
+                    "name": "\u65e0\u9521",
+                    "value": [
+                        120.29,
+                        31.59,
+                        34
+                    ]
+                },
+                {
+                    "name": "\u9752\u5c9b",
+                    "value": [
+                        120.33,
+                        36.07,
+                        34
+                    ]
+                },
+                {
+                    "name": "\u53a6\u95e8",
+                    "value": [
+                        118.1,
+                        24.46,
+                        31
+                    ]
+                },
+                {
+                    "name": "\u90d1\u5dde",
+                    "value": [
+                        113.65,
+                        34.76,
+                        30
+                    ]
+                },
+                {
+                    "name": "\u5927\u8fde",
+                    "value": [
+                        121.62,
+                        38.92,
+                        28
+                    ]
+                },
+                {
+                    "name": "\u5929\u6d25",
+                    "value": [
+                        117.200983,
+                        39.084158,
+                        27
+                    ]
+                },
+                {
+                    "name": "\u4e1c\u839e",
+                    "value": [
+                        113.75,
+                        23.04,
+                        25
+                    ]
+                },
+                {
+                    "name": "\u6c88\u9633",
+                    "value": [
+                        123.38,
+                        41.8,
+                        22
+                    ]
+                },
+                {
+                    "name": "\u4f5b\u5c71",
+                    "value": [
+                        113.11,
+                        23.05,
+                        22
+                    ]
+                },
+                {
+                    "name": "\u6d4e\u5357",
+                    "value": [
+                        117,
+                        36.65,
+                        21
+                    ]
+                },
+                {
+                    "name": "\u798f\u5dde",
+                    "value": [
+                        119.3,
+                        26.08,
+                        19
+                    ]
+                },
+                {
+                    "name": "\u73e0\u6d77",
+                    "value": [
+                        113.52,
+                        22.3,
+                        18
+                    ]
+                },
+                {
+                    "name": "\u60e0\u5dde",
+                    "value": [
+                        114.4,
+                        23.09,
+                        12
+                    ]
+                },
+                {
+                    "name": "\u6606\u660e",
+                    "value": [
+                        102.73,
+                        25.04,
+                        11
+                    ]
+                },
+                {
+                    "name": "\u5e38\u5dde",
+                    "value": [
+                        119.95,
+                        31.79,
+                        8
+                    ]
+                },
+                {
+                    "name": "\u957f\u6625",
+                    "value": [
+                        125.35,
+                        43.88,
+                        8
+                    ]
+                },
+                {
+                    "name": "\u6cc9\u5dde",
+                    "value": [
+                        118.58,
+                        24.93,
+                        8
+                    ]
+                },
+                {
+                    "name": "\u70df\u53f0",
+                    "value": [
+                        121.39,
+                        37.52,
+                        7
+                    ]
+                },
+                {
+                    "name": "\u5357\u660c",
+                    "value": [
+                        115.89,
+                        28.68,
+                        6
+                    ]
+                },
+                {
+                    "name": "\u54c8\u5c14",
+                    "value": [
+                        126.63,
+                        45.75,
+                        5
+                    ]
+                },
+                {
+                    "name": "\u6e29\u5dde",
+                    "value": [
+                        120.65,
+                        28.01,
+                        4
+                    ]
+                },
+                {
+                    "name": "\u4fdd\u5b9a",
+                    "value": [
+                        115.48,
+                        38.85,
+                        4
+                    ]
+                },
+                {
+                    "name": "\u77f3\u5bb6",
+                    "value": [
+                        114.48,
+                        38.03,
+                        4
+                    ]
+                },
+                {
+                    "name": "\u5609\u5174",
+                    "value": [
+                        120.76,
+                        30.77,
+                        4
+                    ]
+                },
+                {
+                    "name": "\u5357\u5b81",
+                    "value": [
+                        108.33,
+                        22.84,
+                        4
+                    ]
+                },
+                {
+                    "name": "\u5357\u901a",
+                    "value": [
+                        121.05,
+                        32.08,
+                        3
+                    ]
+                },
+                {
+                    "name": "\u6d77\u53e3",
+                    "value": [
+                        110.35,
+                        20.02,
+                        3
+                    ]
+                },
+                {
+                    "name": "\u547c\u548c",
+                    "value": [
+                        111.65,
+                        40.82,
+                        3
+                    ]
+                },
+                {
+                    "name": "\u4e2d\u5c71",
+                    "value": [
+                        113.38,
+                        22.52,
+                        3
+                    ]
+                },
+                {
+                    "name": "\u592a\u539f",
+                    "value": [
+                        112.53,
+                        37.87,
+                        3
+                    ]
+                },
+                {
+                    "name": "\u5b81\u5fb7",
+                    "value": [
+                        119.31,
+                        26.39,
+                        2
+                    ]
+                },
+                {
+                    "name": "\u94f6\u5ddd",
+                    "value": [
+                        106.27,
+                        38.47,
+                        2
+                    ]
+                },
+                {
+                    "name": "\u5eca\u574a",
+                    "value": [
+                        116.7,
+                        39.53,
+                        2
+                    ]
+                },
+                {
+                    "name": "\u5f90\u5dde",
+                    "value": [
+                        117.2,
+                        34.26,
+                        2
+                    ]
+                },
+                {
+                    "name": "\u5bbf\u8fc1",
+                    "value": [
+                        118.3,
+                        33.96,
+                        2
+                    ]
+                },
+                {
+                    "name": "\u8862\u5dde",
+                    "value": [
+                        118.88,
+                        28.97,
+                        2
+                    ]
+                },
+                {
+                    "name": "\u67f3\u5dde",
+                    "value": [
+                        109.4,
+                        24.33,
+                        2
+                    ]
+                },
+                {
+                    "name": "\u626c\u5dde",
+                    "value": [
+                        119.42,
+                        32.39,
+                        2
+                    ]
+                },
+                {
+                    "name": "\u9547\u6c5f",
+                    "value": [
+                        119.44,
+                        32.2,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u9f99\u5ca9",
+                    "value": [
+                        117.01,
+                        25.06,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u68a7\u5dde",
+                    "value": [
+                        111.2,
+                        23.29,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u6d4e\u5b81",
+                    "value": [
+                        116.59,
+                        35.38,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u83cf\u6cfd",
+                    "value": [
+                        115.480656,
+                        35.23375,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u6dee\u5b89",
+                    "value": [
+                        119.15,
+                        33.5,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u6dc4\u535a",
+                    "value": [
+                        118.05,
+                        36.78,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u4e0a\u9976",
+                    "value": [
+                        117.58,
+                        25.27,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u9999\u6e2f",
+                    "value": [
+                        114.173355,
+                        22.320048,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u8861\u6c34",
+                    "value": [
+                        115.72,
+                        37.72,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u9ec4\u5c71",
+                    "value": [
+                        118.18,
+                        29.43,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u5b89\u5e86",
+                    "value": [
+                        117.02,
+                        30.31,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u5b89\u5fbd",
+                    "value": [
+                        117.284922,
+                        31.861184,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u6cb3\u5357",
+                    "value": [
+                        113.753602,
+                        34.765515,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u54b8\u5b81",
+                    "value": [
+                        114.17,
+                        29.53,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u5927\u5e86",
+                    "value": [
+                        125.03,
+                        46.58,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u5b9c\u660c",
+                    "value": [
+                        111.3,
+                        30.7,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u5fb7\u5dde",
+                    "value": [
+                        116.29,
+                        37.45,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u829c\u6e56",
+                    "value": [
+                        118.38,
+                        31.33,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u65b0\u4e61",
+                    "value": [
+                        113.52,
+                        35.18,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u5341\u5830",
+                    "value": [
+                        110.47,
+                        32.4,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u6e56\u5317",
+                    "value": [
+                        114.341861,
+                        30.546498,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u6e58\u6f6d",
+                    "value": [
+                        112.91,
+                        27.87,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u65e5\u7167",
+                    "value": [
+                        119.46,
+                        35.42,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u53f0\u5dde",
+                    "value": [
+                        121.420757,
+                        28.656386,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u6f4d\u574a",
+                    "value": [
+                        119.1,
+                        36.62,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u6cf0\u5dde",
+                    "value": [
+                        119.9,
+                        32.49,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u6e56\u5dde",
+                    "value": [
+                        120.1,
+                        30.86,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u5e73\u9876",
+                    "value": [
+                        113.29,
+                        33.75,
+                        1
+                    ]
+                },
+                {
+                    "name": "\u5170\u5dde",
+                    "value": [
+                        103.73,
+                        36.03,
+                        1
+                    ]
+                }
+            ],
+            "label": {
+                "show": false,
+                "position": "top",
+                "margin": 8
+            },
+            "rippleEffect": {
+                "show": true,
+                "brushType": "stroke",
+                "scale": 2.5,
+                "period": 4
+            }
+        }
+    ],
+    "legend": [
+        {
+            "data": [
+                "geo"
+            ],
+            "selected": {
+                "geo": true
+            },
+            "show": true,
+            "padding": 5,
+            "itemGap": 10,
+            "itemWidth": 25,
+            "itemHeight": 14
+        }
+    ],
+    "tooltip": {
+        "show": true,
+        "trigger": "item",
+        "triggerOn": "mousemove|click",
+        "axisPointer": {
+            "type": "line"
+        },
+        "showContent": true,
+        "alwaysShowContent": false,
+        "showDelay": 0,
+        "hideDelay": 100,
+        "formatter": function (params) {        return params.name + ' : ' + params.value[2];    },
+        "textStyle": {
+            "fontSize": 14
+        },
+        "borderWidth": 0,
+        "padding": 5
+    },
+    "title": [
+        {
+            "text": "\u57ce\u5e02\u4e92\u8054\u7f51\u5c97\u4f4d\u6570\u91cf\u5206\u914d",
+            "padding": 5,
+            "itemGap": 10
+        }
+    ],
+    "visualMap": {
+        "show": true,
+        "type": "continuous",
+        "min": 0,
+        "max": 100,
+        "inRange": {
+            "color": [
+                "#50a3ba",
+                "#eac763",
+                "#d94e5d"
+            ]
+        },
+        "calculable": true,
+        "inverse": false,
+        "splitNumber": 5,
+        "orient": "vertical",
+        "showLabel": true,
+        "itemWidth": 20,
+        "itemHeight": 140,
+        "borderWidth": 0
+    },
+    "geo": {
+        "map": "china",
+        "roam": true,
+        "aspectScale": 0.75,
+        "nameProperty": "name",
+        "selectedMode": false,
+        "emphasis": {}
+    }
+};
+        chart_geo_city.setOption(option_geo_city);
+    </script>
+<br/>    </div>
+    <script>
+            $('#bar_city').resizable().draggable().css('border-style', 'dashed').css('border-width', '1px');$("#bar_city>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#bar_city'), function() { chart_bar_city.resize()});
+            $('#word_city').resizable().draggable().css('border-style', 'dashed').css('border-width', '1px');$("#word_city>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#word_city'), function() { chart_word_city.resize()});
+            $('#geo_city').resizable().draggable().css('border-style', 'dashed').css('border-width', '1px');$("#geo_city>div:nth-child(1)").width("100%").height("100%");
+            new ResizeSensor(jQuery('#geo_city'), function() { chart_geo_city.resize()});
+            var charts_id = ['bar_city','word_city','geo_city'];
+function downloadCfg () {
+    const fileName = 'chart_config.json'
+    let downLink = document.createElement('a')
+    downLink.download = fileName
+
+    let result = []
+    for(let i=0; i<charts_id.length; i++) {
+        chart = $('#'+charts_id[i])
+        result.push({
+            cid: charts_id[i],
+            width: chart.css("width"),
+            height: chart.css("height"),
+            top: chart.offset().top + "px",
+            left: chart.offset().left + "px"
+        })
+    }
+
+    let blob = new Blob([JSON.stringify(result)])
+    downLink.href = URL.createObjectURL(blob)
+    document.body.appendChild(downLink)
+    downLink.click()
+    document.body.removeChild(downLink)
+}
+    </script>
+</body>
+</html>
